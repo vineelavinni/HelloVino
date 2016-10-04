@@ -5,7 +5,7 @@
 	<artifactId>hello</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Babblers Maven Webapp</name>
+	<name>hello Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
@@ -95,7 +95,11 @@
 			<artifactId>gson</artifactId>
 			<version>2.6.2</version>
 		</dependency>
-
+<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>

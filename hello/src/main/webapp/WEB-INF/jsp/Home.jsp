@@ -12,7 +12,7 @@
 
 	<div id="tabs" class="container" style="margin-top: 25px">
 		<ul>
-			<!-- <li><a href="#fragment-1">Blog</a></li> -->
+			<li><a href="#fragment-1">Blog</a></li> -->
 			<li><a href="#fragment-2">Forum</a></li>
 		    <!-- <li><a href="#fragment-3">Chat</a></li> --> 
 		</ul>

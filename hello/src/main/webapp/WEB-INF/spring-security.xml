@@ -23,7 +23,7 @@ http://www.springframework.org/schema/security/spring-security.xsd">
 			default-target-url="/" 
 			login-processing-url="/perform_login"
 			authentication-success-forward-url="/LoginSuccess" 
-			authentication-failure-url="/login"/>
+			authentication-failure-url="/login1"/>
 
 		<security:logout logout-url="/perform_logout"
 			invalidate-session="true" 

@@ -30,7 +30,7 @@
 						<li><a href="#reg" data-toggle="modal"
 							data-target="#reg"> <span
 								class="glyphicon glyphicon-user"></span>
-						</a></li>
+						</a></li> 
 					</sec:authorize>
 				</ul>
 			</div>

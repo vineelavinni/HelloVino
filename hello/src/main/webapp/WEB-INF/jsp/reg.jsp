@@ -12,7 +12,7 @@
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/AngularControllers/App.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/AngularControllers/Home.js"></script>
 
-<body>
+<body >
 <link href="http://cdn.phpoll.com/css/animate.css" rel="stylesheet">
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     	<div class="container-fluid">
@@ -23,7 +23,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			</button>
-				<a class="navbar-brand" href="">Project Name</a>
+				<a class="navbar-brand" href="">Hello</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
@@ -34,15 +34,15 @@
                     <li class="dropdown">
                         <a href="http://phpoll.com/register" class="dropdown-toggle" data-toggle="dropdown">Register <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-lr animated flipInX" role="menu">
-                            <div class="col-lg-12">
+                        
+						<li>
                                 <div class="text-center"><h3><b>Register</b></h3></div>
-								<form role="form" data-ng-submit="submit()"
-						data-ng-controller="RegController" method="post">
+								<form role="form" data-ng-submit="submit()" data-ng-controller="RegController" method="post">
 									<div class="form-group">
 										<input type="text" name="name" id="name" tabindex="1" class="form-control" placeholder="name" required data-ng-model="name" value="">
 									</div>
 									<div class="form-group">
-										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" required data-ng-model="Username" value="">
+										<input type="text" name="username" id="username" tabindex="1" class="form-control" placeholder="Username" required data-ng-model="username" value="">
 									</div>
 									<div class="form-group">
 										<input type="password" name="password" id="password" tabindex="1" class="form-control" placeholder="password" required data-ng-model="password" value="">
@@ -58,26 +58,33 @@
 									</div>
 									<div class="form-group">
 										<div class="row">
-											<div class="col-xs-6 col-xs-offset-3">
+											<div class="col-xs-9 col-xs-offset-2">
 												<input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-info" value="Register Now">
 											</div>
 										</div>
 									</div>
                                     <input type="hidden" class="hide" name="token" id="token" value="7c6f19960d63f53fcd05c3e0cbc434c0">
 								</form>
-                            </div>
+            </li>
                         </ul>
                     </li>
+                     <sec:authorize access="isAuthenticated()">
+                    
+                    
+                    
+                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
+					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
+					<li><a style="color: white">Hello  <b><sec:authentication property="principal.username" /></b></a></li>
+						<li><a href="perform_logout"><span
+								class="glyphicon glyphicon-log-out"></span></a></li>
+					</sec:authorize> 
                     <li class="dropdown">
                         <a href="http://phpoll.com/login" class="dropdown-toggle" data-toggle="dropdown">Log In <span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-lr animated slideInRight" role="menu">
              
                             <div class="col-lg-12">
-                            <sec:authorize access="isAuthenticated()">
-					<li><a style="color: white">Hello  <b><sec:authentication property="principal.username" /></b></a></li>
-						<li><a href="perform_logout"><span
-								class="glyphicon glyphicon-log-out"></span></a></li>
-					</sec:authorize>
+                            
                                 <div class="text-center"><h3><b>Log In</b></h3></div>
                                 <form  action="perform_login" method="post"><!-- <span class="glyphicon glyphicon-log-out"></span> -->
                                     <div class="form-group">
@@ -90,20 +97,19 @@
                                         <input type="password" name="password" id="password" tabindex="2" class="form-control" placeholder="Password" autocomplete="off">
                                     </div>
 
-                                    <div class="form-group">
+                                   <div class="form-group">
                                         <div class="row">
-                                            <div class="col-xs-7">
+                                            <div class="col-xs-0">
                                                 <input type="checkbox" tabindex="3" name="remember" id="remember">
                                                 <label for="remember"> Remember Me</label>
+                                            </div> 
+                                            <div class="col-xs-8 pull-right">
+                         <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
                                             </div>
-                                            <div class="col-xs-5 pull-right">
-                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In">
-                                            </div>
-                                        </div>
+                                         </div>
                                     </div>
-
                                     <div class="form-group">
-                                        <div class="row">
+                                        <div class="row-lg-12">
                                             <div class="col-lg-12">
                                                 <div class="text-center">
                                                     <a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
@@ -120,13 +126,50 @@
 			</div>
 		</div>
 	</nav>
-    
-<div class="container">
+ <%--   <sec:authorize access="isAuthenticated()">
+                    
+                    
+                    
+                    <li><a href="${pageContext.request.contextPath}/blog">Blog</a></li>
+					<li><a href="${pageContext.request.contextPath}/forum">Forum</a></li>
+					<li><a href="${pageContext.request.contextPath}/chat">Chat</a></li>
+					<li><a style="color: white">Hello  <b><sec:authentication property="principal.username" /></b></a></li>
+						<li><a href="perform_logout"><span
+								class="glyphicon glyphicon-log-out"></span></a></li>
+					</sec:authorize>   --%>
+ <div class="container">
     <div class="row">
         <div class="col-xs-12 text-center">Be sure to include <a href="http://daneden.github.io/animate.css/" target="_blank" title="animate.css">animate.css</a> for the animations</div>
     </div>
-</div>
-<div id="tabs" class="container" style="margin-top: 25px">
+</div> 
+<!-- <div id="tabs" class="container" style="margin-top: 25px"> -->
+<c:choose>
+		<c:when test="${BlogClicked}">
+			<div class="container">
+				<c:import url="/WEB-INF/jsp/Blog.jsp">
+				</c:import>
+			</div>
+		</c:when>
+		<c:when test="${ForumClicked}">
+			<div class="container">
+				<c:import url="/WEB-INF/jsp/Forum.jsp">
+				</c:import>
+			</div>
+		</c:when>
+		<c:when test="${IndividualForum}">
+			<div class="container">
+				<c:import url="/WEB-INF/jsp/IndividualForum.jsp">
+				</c:import>
+			</div>
+		</c:when>
+		<c:when test="${ChatClicked}">
+			<div class="container">
+				<c:import url="/WEB-INF/jsp/Chat.jsp">
+				</c:import>
+			</div>
+		</c:when>
+	</c:choose>
+<%-- <div id="tabs" class="container" style="margin-top: 25px">
 		<ul>
 			 <li><a href="#fragment-1">Blog</a></li> 
 			<li><a href="#fragment-2">Forum</a></li>
@@ -141,7 +184,7 @@
 		 <div id="fragment-3">
 			<%@include file="/WEB-INF/jsp/Chat.jsp"%>
 		</div> 
-	</div>
+	</div> --%>
 	<script>
 		$(function() {
 			$("#tabs").tabs();

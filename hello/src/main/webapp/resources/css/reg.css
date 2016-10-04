@@ -1,9 +1,10 @@
+
 body {
-    padding-top: 90px;
+    padding-top: 100px;
 }
 /* General sizing */
 ul.dropdown-lr {
-  width: 300px;
+  width: 100%;
 }
 
 /* mobile fix */
